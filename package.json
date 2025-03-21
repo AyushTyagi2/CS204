@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "chmod +x ./executables/*.exe"
+    "postinstall": "chmod +x src/executables/*"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
