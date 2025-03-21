@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "apt update && apt add g++ && chmod +x src/executables/*"
+"postinstall": "nix-env -iA nixpkgs.gcc && chmod +x src/executables/*"
 
     
   },
