@@ -1,0 +1,3 @@
+[service]
+name = "riscv-simulator"
+start = "node server.js"
