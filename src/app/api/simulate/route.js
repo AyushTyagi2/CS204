@@ -11,7 +11,7 @@ export async function POST(req) {
         console.log("✅ Received Code:", code);
 
         // Define base execution path using path.resolve
-        const execPath = path.resolve("C:/Users/asus/OneDrive/Documents/GitHub/Cs204_risc-v_assembler/project_phase_2/phase2/src/executables");
+        const execPath = path.join(process.cwd(), "src/executables/");
 
         // Define absolute file paths
         const asmFilePath = path.resolve(execPath, "input.asm");
