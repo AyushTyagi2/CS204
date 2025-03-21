@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "apt update && apt install -y g++ && chmod +x src/executables/*"
+    "postinstall": "apt update && apt add g++ && chmod +x src/executables/*"
 
     
   },
