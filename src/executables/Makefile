@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -Wextra -g  # No need to specify include path if json.hpp is in the same folder
+CFLAGS = -Wall -Wextra -g
 SRC = main.cpp myRISCVSim.cpp json.cpp
 OBJ = $(SRC:.cpp=.o)
 EXEC = myRISCVSim
@@ -13,4 +13,4 @@ $(EXEC): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	del /Q *.o *.bak myRISCVSim.exe
+	rm -f *.o *.bak $(EXEC)  # Use `rm -f` instead of `del /Q`
