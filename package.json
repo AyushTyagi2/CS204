@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "chmod +x src/executables/1.exe"
+    "postinstall": "chmod +x src/executables/*"
     
   },
   "dependencies": {
