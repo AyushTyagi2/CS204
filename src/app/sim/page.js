@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Editor } from "@monaco-editor/react";
 import RegisterFile from "../components/registers";
 import MemoryFile from "../components/memory";
-import execution_output from "../../executables";
+import execution_output from "../../../executables/execution_output.json";
+
 
 const VenusEditor = () => {
     const [activeTab, setActiveTab] = useState("Editor");
