@@ -10,46 +10,46 @@ export async function POST(req) {
         const { code } = await req.json();
         console.log("✅ Received Code:", code);
 
-        // Define base execution path using path.resolve
-        const execPath = path.join(process.cwd(), "src/executables/");
+        // Define base execution path inside Docker
+        const execPath = "/app/src"; // Change to match Docker setup
 
-        // Define absolute file paths
-        const asmFilePath = path.resolve(execPath, "input.asm");
-        const mcFilePath = path.resolve(execPath, "output.mc");
-        const jsonFilePath = path.resolve(execPath, "execution_output.json");
+        // Define file paths
+        const asmFilePath = path.join(execPath, "/executables/input.asm");
+        const mcFilePath = path.join(execPath, "/executables/output.mc");
+        const jsonFilePath = path.join(execPath, "/executables/execution_output.json");
 
-        // Write the Assembly code to input.asm
+        // Write input.asm
         console.log(`📂 Writing Assembly code to: ${asmFilePath}`);
         await writeFile(asmFilePath, code, "utf-8");
 
-        // Run `1.exe` to generate `output.mc`
-        console.log(`🚀 Running 1.exe in ${execPath}...`);
-        const { stdout: exeStdout, stderr: exeStderr } = await execAsync(`"${path.resolve(execPath, "1.exe")}"`, { cwd: execPath });
-        console.log("✅ 1.exe execution complete.");
-        console.log("📜 1.exe stdout:", exeStdout);
-        if (exeStderr) console.error("⚠️ 1.exe stderr:", exeStderr);
+        // Run 1.out inside Docker
+        console.log(`🚀 Running 1.out inside Docker...`);
+        const { stdout: exeStdout, stderr: exeStderr } = await execAsync(`sh run.sh`, { cwd: "/app" });
+        console.log("✅ 1.out execution complete.");
+        console.log("📜 1.out stdout:", exeStdout);
+        if (exeStderr) console.error("⚠️ 1.out stderr:", exeStderr);
 
-        // Ensure `output.mc` exists before running the simulator
+        // Check if output.mc was generated
         try {
             await access(mcFilePath);
             console.log("📄 output.mc found, proceeding...");
         } catch {
-            throw new Error("❌ output.mc not generated! Check 1.exe execution.");
+            throw new Error("❌ output.mc not generated! Check 1.out execution.");
         }
 
-        // Run `myRISCVSim.exe` to generate `execution_output.json`
-        console.log(`🚀 Running myRISCVSim.exe in ${execPath}...`);
-        const { stdout: simStdout, stderr: simStderr } = await execAsync(`"${path.resolve(execPath, "myRISCVSim.exe")}" "output.mc"`, { cwd: execPath });
-        console.log("✅ myRISCVSim.exe execution complete.");
-        console.log("📜 myRISCVSim.exe stdout:", simStdout);
-        if (simStderr) console.error("⚠️ myRISCVSim.exe stderr:", simStderr);
+        // Run myRISCVSim.out inside Docker
+        console.log(`🚀 Running myRISCVSim.out inside Docker...`);
+        const { stdout: simStdout, stderr: simStderr } = await execAsync(`sh run2.sh`, { cwd: "/app" });
+        console.log("✅ myRISCVSim.out execution complete.");
+        console.log("📜 myRISCVSim.out stdout:", simStdout);
+        if (simStderr) console.error("⚠️ myRISCVSim.out stderr:", simStderr);
 
-        // Ensure `execution_output.json` exists before reading
+        // Check if execution_output.json was generated
         try {
             await access(jsonFilePath);
             console.log("📄 execution_output.json found, reading...");
         } catch {
-            throw new Error("❌ execution_output.json not generated! Check myRISCVSim.exe execution.");
+            throw new Error("❌ execution_output.json not generated! Check myRISCVSim.out execution.");
         }
 
         // Read the generated JSON output

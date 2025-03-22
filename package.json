@@ -6,10 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-"postinstall": "nix-env -iA nixpkgs.gcc && chmod +x src/executables/*"
-
-    
+    "lint": "next lint"    
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",

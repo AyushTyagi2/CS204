@@ -6,9 +6,15 @@ export async function GET() {
         const filePath = path.join(process.cwd(), "src/executables/output.mc");
         const fileContent = await fs.readFile(filePath, "utf-8");
 
-        return Response.json({ success: true, data: fileContent });
+        return new Response(JSON.stringify({ success: true, data: fileContent }), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+        });
     } catch (error) {
         console.error("Error reading .mc file:", error);
-        return Response.json({ success: false, error: "Error reading file" }, { status: 500 });
+        return new Response(JSON.stringify({ success: false, error: "Error reading file" }), {
+            status: 500,
+            headers: { "Content-Type": "application/json" },
+        });
     }
 }

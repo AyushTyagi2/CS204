@@ -15,11 +15,9 @@
 using namespace std;
 
 // Register file
-int32_t R[32];
-uint32_t PC = 0;  // Separate Program Counter
-
-// Memory
-uint8_t MEM[4000] = {0};
+ int32_t R[32];
+ uint8_t MEM[4000] = {0};
+ uint32_t PC = 0;
 
 // Instruction Fields
 static unsigned int instruction_word;
@@ -47,7 +45,8 @@ void run_RISCVsim() {
 void reset_proc() {
     for (int i = 0; i < 32; i++) R[i] = 0;
     for (int i = 0; i < 4000; i++) MEM[i] = 0;
-    R[32] = 0; // Initialize PC to 0
+   // R[32] = 0; // Initialize PC to 0
+    PC=0;
 }
 
 // Load program memory from file
@@ -84,7 +83,6 @@ void load_program_memory(char *file_name) {
 
     fclose(fp);
 }
-
 
 // Write data memory to file
 void write_data_memory() {
@@ -170,6 +168,18 @@ void decode() {
         
             break;
             }
+        case 0x63: // B-Type (BEQ, BNE, BLT, BGE, etc.)
+            funct3 = (instruction_word >> 12) & 0x7;
+            rs1 = (instruction_word >> 15) & 0x1F;
+            rs2 = (instruction_word >> 20) & 0x1F;
+            imm = ((instruction_word >> 31) << 12) | ((instruction_word >> 25) & 0x3F) | ((instruction_word >> 8) & 0xF) | ((instruction_word << 1) & 0x800);
+            printf("B-Type: rs1=%d, rs2=%d, imm=%d, funct3=%d\n", rs1, rs2, imm, funct3);
+            break;
+        case 0x6F: // J-Type (JAL)
+            rd = (instruction_word >> 7) & 0x1F;
+            imm = ((instruction_word >> 31) << 20) | ((instruction_word >> 12) & 0xFF) | ((instruction_word >> 20) & 0x7FE) | ((instruction_word >> 21) & 0x7F);
+            printf("J-Type: rd=%d, imm=%d\n", rd, imm);
+            break;
                
             
         default:
@@ -182,7 +192,7 @@ void decode() {
 
 void execute() {
     unsigned int opcode = instruction_word & 0x7F;
-
+    int eff_addr;
     switch (opcode) {
         case 0x33: // R-Type (ADD, SUB, AND, OR, etc.)
             switch (funct3) {
@@ -193,15 +203,52 @@ void execute() {
                     } else if (funct7 == 0x20) {
                         operand1 = R[rs1] - R[rs2];  // SUB
                         printf("Executing SUB: %d - %d = %d\n", R[rs1], R[rs2], operand1);
-                    }
+                    } else if (funct7 == 0x1F) {
+                        operand1 = R[rs1] * R[rs2];  // MUL
+                        printf("Executing MUL: %d * %d = %d\n", R[rs1], R[rs2], operand1);
+                    } 
                     break;
                 case 0x7: // AND
                     operand1 = R[rs1] & R[rs2];
                     printf("Executing AND: %d & %d = %d\n", R[rs1], R[rs2], operand1);
                     break;
-                case 0x6: // OR
-                    operand1 = R[rs1] | R[rs2];
-                    printf("Executing OR: %d | %d = %d\n", R[rs1], R[rs2], operand1);
+                case 0x6: // OR, REM
+                    if(funct7 == 0x00){
+                        operand1 = R[rs1] | R[rs2];  // OR
+                        printf("Executing OR: %d | %d = %d\n", R[rs1], R[rs2], operand1);
+                    }
+                    else if(funct7 == 0x01){
+                        operand1 = R[rs1] % R[rs2];  // REM
+                        printf("Executing REM: %d %% %d = %d\n", R[rs1], R[rs2], operand1);
+
+                    }
+                    break;
+                case 0x1: // SLL
+                    operand1 = R[rs1] << R[rs2];
+                    printf("Executing SLL: %d << %d = %d\n", R[rs1], R[rs2], operand1);
+                    break;
+                case 0x2: // SLT
+                    operand1 = (R[rs1] < R[rs2]) ? 1 : 0;
+                    printf("Executing SLT: %d < %d = %d\n", R[rs1], R[rs2], operand1);
+                    break;
+                case 0x5: // SRL / SRA
+                    if (funct7 == 0x00) {
+                        operand1 = R[rs1] >> R[rs2];  // SRL
+                        printf("Executing SRL: %d >> %d = %d\n", R[rs1], R[rs2], operand1);
+                    } else if (funct7 == 0x20) {
+                        operand1 = (int)R[rs1] >> R[rs2];  // SRA
+                        printf("Executing SRA: %d >> %d = %d\n", R[rs1], R[rs2], operand1);
+                    }
+                    break;
+                case 0x4: // XOR, DIV, 
+                    if(funct7 == 0x00){
+                        operand1 = R[rs1] ^ R[rs2];  // XOR
+                        printf("Executing XOR: %d ^ %d = %d\n", R[rs1], R[rs2], operand1);
+                    }
+                    else if(funct7 == 0x01){
+                        operand1 = R[rs1] / R[rs2];  // DIV
+                        printf("Executing DIV: %d / %d = %d\n", R[rs1], R[rs2], operand1);
+                    }
                     break;
                 
                 default:
@@ -231,20 +278,48 @@ void execute() {
             break;
         case 0x23:
             switch(funct3){
-                case 0x2: // sw
-                    int eff_addr = R[rs1] + imm;
+                case 0x2: // SW
+                     eff_addr = R[rs1] + imm;
                     operand2 = R[rs2];
                     printf("Executing SW: %d + %d = %d\n", R[rs1], imm, eff_addr);
                     break;
+                case 0x0: // SB
+                     eff_addr = R[rs1] + imm;
+                    operand2 = R[rs2];
+                    printf("Executing SB: %d + %d = %d\n", R[rs1], imm, eff_addr);
+                    break;
+                case 0x1: // SH
+                     eff_addr = R[rs1] + imm;
+                    operand2 = R[rs2];
+                    printf("Executing SH: %d + %d = %d\n", R[rs1], imm, eff_addr);
+                    break;
             }
-        /*case 0x3:
-            switch(funct3){
-                case 0x2://lw
-                    //int eff_addr = R[rs1] + imm;
-                    rd = 
-            }*/
-           case 0x17:
-                operand1 = PC + imm;
+            break;
+            case 0x03: // I-Type (Load Instructions)
+            switch(funct3) {
+                case 0x0: // LB (Load Byte)
+                     eff_addr = R[rs1] + imm;
+                    printf("Executing LB: Base %d + Offset %d = Effective Address %d\n", R[rs1], imm, eff_addr);
+                    break;
+                case 0x1: // LH (Load Halfword)
+                     eff_addr = R[rs1] + imm;
+                    printf("Executing LH: Base %d + Offset %d = Effective Address %d\n", R[rs1], imm, eff_addr);
+                    break;
+                case 0x2: // LW (Load Word)
+                     eff_addr = R[rs1] + imm;
+                    printf("Executing LW: Base %d + Offset %d = Effective Address %d\n", R[rs1], imm, eff_addr);
+                    break;
+                default:
+                    printf("Unknown Load operation\n");
+                    break;
+            }
+            break;
+     
+            case 0x17: // AUIPC
+            operand1 = PC + imm;
+            printf("Executing AUIPC: PC %d + Immediate %d = %d\n", PC, imm, operand1);
+            break;
+
         default:
             printf("Unknown instruction type in execute stage\n");
             break;
@@ -320,9 +395,11 @@ void write_back() {
         case 0x37: //U-type(LUI)
             R[rd] = imm;
             printf("Write Back in %d with imm %d\n", rd, imm);
+            break;
         case 0x17://U-type(AUIPC)
             R[rd] = operand1 - 4;
             printf("Write Back in x%d with value %d (PC + imm)\n", rd, R[rd]);
+            break;
         default:
             printf("Unknown instruction in write-back stage\n");
             break;
@@ -370,5 +447,3 @@ void write_word(char *mem, unsigned int address, unsigned int data, int instruct
             break;
     }
 }
-
-
