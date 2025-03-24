@@ -28,7 +28,8 @@ void write_execution_json() {
     execution_data["PC"] = PC;
 
     // Write to a file
-    std::ofstream output_file("/app/src/app/sim/execution_output.json");
+    std::ofstream output_file("execution_output.json");
+   
     output_file << execution_data.dump(4); // Pretty print JSON with indentation
     output_file.close();
 

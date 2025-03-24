@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 const RegisterFile = ({ data, className = "" }) => {
   const [registers, setRegisters] = useState(Array(32).fill("0x00000000"));

@@ -12,7 +12,7 @@ export async function GET() {
         });
     } catch (error) {
         console.error("Error reading .mc file:", error);
-        return new Response(JSON.stringify({ success: false, error: "Error reading file" }), {
+        return new Response(JSON.stringify({ sruccess: false, error: "Error reading file" }), {
             status: 500,
             headers: { "Content-Type": "application/json" },
         });

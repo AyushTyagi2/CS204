@@ -1,16 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Editor } from "@monaco-editor/react";
 import RegisterFile from "../components/registers";
 import MemoryFile from "../components/memory";
-import execution_output from "../../executables/execution_output";
+
 
 
 const VenusEditor = () => {
     const [activeTab, setActiveTab] = useState("Editor");
     const [editorContent, setEditorContent] = useState(""); // Code input state
     const [showRegisters, setShowRegisters] = useState(true); // Toggle between Registers and Memory
-
+    const[execution_output,setexecution_output] = useState(null);
      const [parsedInstructions, setParsedInstructions] = useState([]); // Store parsed instructions
 
     // Function to import and parse the latest .mc file
@@ -43,7 +43,27 @@ const VenusEditor = () => {
         }
     };
     
-
+    useEffect(() => {
+        const fetchExecutionOutput = async () => {
+            try {
+                const response = await fetch("/api/execution");
+                const data = await response.json();
+                if (response.ok) {
+                    setexecution_output(data);
+                } else {
+                    console.error("Failed to load execution output:", data.error);
+                }
+            } catch (error) {
+                console.error("Error fetching execution_output.json:", error);
+            }
+        };
+    
+        fetchExecutionOutput();
+        const interval = setInterval(fetchExecutionOutput, 2000); // Poll every 2 seconds
+    
+        return () => clearInterval(interval); // Cleanup interval on unmount
+    }, []);
+    
 
     const handleSimulate = async () => {
         try {
@@ -73,7 +93,7 @@ const VenusEditor = () => {
             {/* Header */}
             <header className="bg-gray-800 p-4 flex items-center">
                 <div className="flex space-x-4">
-                    <span className="text-lg font-semibold">Venus</span>
+                    <span className="text-lg font-semibold">jupiter</span>
                     <button className={`px-3 py-1 rounded-md ${activeTab === "Editor" ? "bg-gray-700" : "hover:bg-gray-700"}`} onClick={() => setActiveTab("Editor")}>
                         Editor
                     </button>
@@ -95,11 +115,11 @@ const VenusEditor = () => {
                         </div>
 
                         {/* Monaco Editor Area */}
-                        <div className="flex-grow bg-gray-800 p-4 relative overflow-auto">
+                        <div className="flex-grow bg-gray-800 memory-section relative overflow-auto">
                             <Editor
                                 height="100%"
                                 defaultLanguage="assembly"  // Customize if needed
-                                theme="vs-dark"
+                                theme="hc-black"
                                 value={editorContent}
                                 onChange={(value) => setEditorContent(value)}
                                 options={{

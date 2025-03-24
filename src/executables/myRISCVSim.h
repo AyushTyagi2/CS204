@@ -1,9 +1,8 @@
 #ifndef MYRISCVSIM_H
 #define MYRISCVSIM_H
 #include <cstdint>
-
-extern int32_t R[32];
 extern uint8_t MEM[4000];
+extern int32_t R[32];
 extern uint32_t PC;
 
 // Function Prototypes

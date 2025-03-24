@@ -54,7 +54,7 @@ export async function POST(req) {
 
         // Read the generated JSON output
         const simulationOutput = await readFile(jsonFilePath, "utf-8");
-        console.log("✅ Successfully read execution_output.json");
+        console.log("✅ Successfully read execution_output.json", simulationOutput);
 
         return new Response(simulationOutput, {
             status: 200,
