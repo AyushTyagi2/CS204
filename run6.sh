@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # Navigate to the executables directory
-cd src/executables_phase1
+cd src/executables_phase3
 
 # Compile the C++ executable
-#echo "🔧 Compiling 1.c++..."
-#g++ -o 1.exe 1.c++
+#echo "🔧 Compiling myriscvsim.cpp..."
+#g++ -Wall -Wextra -g main.cpp myRISCVSim.cpp json.cpp -o myRISCVSim.out
 
 # Check if compilation was successful
 #if [ $? -eq 0 ]; then
@@ -16,8 +16,8 @@ cd src/executables_phase1
 #fi
 
 # Give execute permissions
-chmod +x 1.exe
+chmod +x myRISCVsim_phase3.exe
 
 # Run the compiled executable
-echo "🚀 Running 1.out..."
-./1.exe
+echo "🚀 Running myRISCVSim.out..."
+./myRISCVsim_phase3.exe ../executables_phase1/output.mc --branch-pred

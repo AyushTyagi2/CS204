@@ -1,0 +1,69 @@
+[
+    {
+        "BranchPredictor": null,
+        "IF": {
+            "instruction": "0x308133",
+            "pc": "0x0"
+        },
+        "cycle": 1
+    },
+    {
+        "BranchPredictor": null,
+        "ID": {
+            "instruction": "0x308133",
+            "pc": "0x0"
+        },
+        "IF": {
+            "instruction": "0x517633",
+            "pc": "0x4"
+        },
+        "cycle": 2
+    },
+    {
+        "BranchPredictor": null,
+        "EX": {
+            "op1": "0x0",
+            "op2": "0x0",
+            "pc": "0x0"
+        },
+        "ID": {
+            "instruction": "0x517633",
+            "pc": "0x4"
+        },
+        "cycle": 3
+    },
+    {
+        "BranchPredictor": null,
+        "EX": {
+            "op1": "0x0",
+            "op2": "0x0",
+            "pc": "0x4"
+        },
+        "MEM": {
+            "instruction": "",
+            "pc": "NO MEMORY OPERATION"
+        },
+        "cycle": 4,
+        "forwarded": 1
+    },
+    {
+        "BranchPredictor": null,
+        "MEM": {
+            "instruction": "",
+            "pc": "NO MEMORY OPERATION"
+        },
+        "WB": {
+            "instruction": 3178803,
+            "pc": "0x0"
+        },
+        "cycle": 5
+    },
+    {
+        "BranchPredictor": null,
+        "WB": {
+            "instruction": 5338675,
+            "pc": "0x4"
+        },
+        "cycle": 6
+    }
+]

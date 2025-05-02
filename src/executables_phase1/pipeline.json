@@ -1,0 +1,296 @@
+[
+    {
+        "cycle": 1,
+        "instruction": {
+            "instruction": "lui x11 0x10000",
+            "pc": "0x0"
+        }
+    },
+    {
+        "cycle": 2,
+        "instruction": {
+            "instruction": "addi x10 x11 4",
+            "pc": "0x4"
+        }
+    },
+    {
+        "cycle": 3,
+        "instruction": {
+            "instruction": "lw x11 0 x11",
+            "pc": "0x8"
+        }
+    },
+    {
+        "cycle": 4,
+        "instruction": {
+            "instruction": "addi x17 x0 11",
+            "pc": "0xc"
+        }
+    },
+    {
+        "cycle": 5,
+        "instruction": {
+            "instruction": "addi x21 x0 1",
+            "pc": "0x10"
+        }
+    },
+    {
+        "cycle": 6,
+        "instruction": {
+            "instruction": "addi x24 x0 1",
+            "pc": "0x14"
+        }
+    },
+    {
+        "cycle": 7,
+        "instruction": {
+            "instruction": "addi x25 x0 2",
+            "pc": "0x18"
+        }
+    },
+    {
+        "cycle": 8,
+        "instruction": {
+            "instruction": "jal x1 binary_search",
+            "pc": "0x1c"
+        }
+    },
+    {
+        "cycle": 9,
+        "instruction": {
+            "instruction": "beq x0 x0 exit",
+            "pc": "0x20"
+        }
+    },
+    {
+        "cycle": 10,
+        "instruction": {
+            "instruction": "binary_search: addi x2 x2 -12",
+            "pc": "0x24"
+        }
+    },
+    {
+        "cycle": 11,
+        "instruction": {
+            "instruction": "sw x1 8 x2",
+            "pc": "0x28"
+        }
+    },
+    {
+        "cycle": 12,
+        "instruction": {
+            "instruction": "sw x21 4 x2",
+            "pc": "0x2c"
+        }
+    },
+    {
+        "cycle": 13,
+        "instruction": {
+            "instruction": "sw x11 0 x2",
+            "pc": "0x30"
+        }
+    },
+    {
+        "cycle": 14,
+        "instruction": {
+            "instruction": "blt x11 x21 end",
+            "pc": "0x34"
+        }
+    },
+    {
+        "cycle": 15,
+        "instruction": {
+            "instruction": "sub x16 x11 x21",
+            "pc": "0x38"
+        }
+    },
+    {
+        "cycle": 16,
+        "instruction": {
+            "instruction": "srl x16 x16 x24",
+            "pc": "0x3c"
+        }
+    },
+    {
+        "cycle": 17,
+        "instruction": {
+            "instruction": "add x16 x16 x21",
+            "pc": "0x40"
+        }
+    },
+    {
+        "cycle": 18,
+        "instruction": {
+            "instruction": "addi x28 x16 0",
+            "pc": "0x44"
+        }
+    },
+    {
+        "cycle": 19,
+        "instruction": {
+            "instruction": "addi x16 x16 -1",
+            "pc": "0x48"
+        }
+    },
+    {
+        "cycle": 20,
+        "instruction": {
+            "instruction": "sll x16 x16 x25",
+            "pc": "0x4c"
+        }
+    },
+    {
+        "cycle": 21,
+        "instruction": {
+            "instruction": "add x16 x10 x16",
+            "pc": "0x50"
+        }
+    },
+    {
+        "cycle": 22,
+        "instruction": {
+            "instruction": "lw x18 0 x16",
+            "pc": "0x54"
+        }
+    },
+    {
+        "cycle": 23,
+        "instruction": {
+            "instruction": "blt x17 x18 change",
+            "pc": "0x58"
+        }
+    },
+    {
+        "cycle": 24,
+        "instruction": {
+            "instruction": "bne x17 x18 change2",
+            "pc": "0x5c"
+        }
+    },
+    {
+        "cycle": 25,
+        "instruction": {
+            "instruction": "add x30 x0 x16",
+            "pc": "0x60"
+        }
+    },
+    {
+        "cycle": 26,
+        "instruction": {
+            "instruction": "lw x1 8 x2",
+            "pc": "0x64"
+        }
+    },
+    {
+        "cycle": 27,
+        "instruction": {
+            "instruction": "addi x2 x2 12",
+            "pc": "0x68"
+        }
+    },
+    {
+        "cycle": 28,
+        "instruction": {
+            "instruction": "jalr x0 x1 0",
+            "pc": "0x6c"
+        }
+    },
+    {
+        "cycle": 29,
+        "instruction": {
+            "instruction": "change: addi x11 x28 -1",
+            "pc": "0x70"
+        }
+    },
+    {
+        "cycle": 30,
+        "instruction": {
+            "instruction": "jal x1 binary_search",
+            "pc": "0x74"
+        }
+    },
+    {
+        "cycle": 31,
+        "instruction": {
+            "instruction": "lw x1 8 x2",
+            "pc": "0x78"
+        }
+    },
+    {
+        "cycle": 32,
+        "instruction": {
+            "instruction": "addi x2 x2 12",
+            "pc": "0x7c"
+        }
+    },
+    {
+        "cycle": 33,
+        "instruction": {
+            "instruction": "jalr x0 x1 0",
+            "pc": "0x80"
+        }
+    },
+    {
+        "cycle": 34,
+        "instruction": {
+            "instruction": "change2: addi x21 x28 1",
+            "pc": "0x84"
+        }
+    },
+    {
+        "cycle": 35,
+        "instruction": {
+            "instruction": "jal x1 binary_search",
+            "pc": "0x88"
+        }
+    },
+    {
+        "cycle": 36,
+        "instruction": {
+            "instruction": "lw x1 8 x2",
+            "pc": "0x8c"
+        }
+    },
+    {
+        "cycle": 37,
+        "instruction": {
+            "instruction": "addi x2 x2 12",
+            "pc": "0x90"
+        }
+    },
+    {
+        "cycle": 38,
+        "instruction": {
+            "instruction": "jalr x0 x1 0",
+            "pc": "0x94"
+        }
+    },
+    {
+        "cycle": 39,
+        "instruction": {
+            "instruction": "end: addi x30 x0 -1",
+            "pc": "0x98"
+        }
+    },
+    {
+        "cycle": 40,
+        "instruction": {
+            "instruction": "lw x1 8 x2",
+            "pc": "0x9c"
+        }
+    },
+    {
+        "cycle": 41,
+        "instruction": {
+            "instruction": "addi x2 x2 12",
+            "pc": "0xa0"
+        }
+    },
+    {
+        "cycle": 42,
+        "instruction": {
+            "instruction": "jalr x0 x1 0",
+            "pc": "0xa4"
+        }
+    }
+]

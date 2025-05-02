@@ -1,0 +1,351 @@
+[IF ] Cycle 1 | Fetched instruction 0x193 at PC=0x0
+[ID ] Cycle 2 | Decoding instruction 0x193 at PC=0x0
+[IF ] Cycle 2 | Fetched instruction 0xb00a13 at PC=0x4
+[EX ] Cycle 3 | op1 = 0x0 op2 = 0x0
+[ID ] Cycle 3 | Decoding instruction 0xb00a13 at PC=0x4
+[IF ] Cycle 3 | Fetched instruction 0x913 at PC=0x8
+[EX ] Cycle 4 | op1 = 0x0 | op2 = 0xb
+[ID ] Cycle 4 | Decoding instruction 0x913 at PC=0x8
+[IF ] Cycle 4 | Fetched instruction 0x993 at PC=0xc
+[WB ] Cycle 5 | Wrote x3 = 0x0
+[EX ] Cycle 5 | op1 = 0x0 | op2 = 0x0
+[ID ] Cycle 5 | Decoding instruction 0x993 at PC=0xc
+[IF ] Cycle 5 | Fetched instruction 0x200293 at PC=0x10
+[WB ] Cycle 6 | Wrote x20 = 0xb
+[EX ] Cycle 6 | op1 = 0x0 | op2 = 0x0
+[ID ] Cycle 6 | Decoding instruction 0x200293 at PC=0x10
+[IF ] Cycle 6 | Fetched instruction 0x141c463 at PC=0x14
+[WB ] Cycle 7 | Wrote x18 = 0x0
+[EX ] Cycle 7 | op1 = 0x0 | op2 = 0x2
+[ID ] Cycle 7 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 7 | Fetched instruction 0x2000663 at PC=0x18
+[WB ] Cycle 8 | Wrote x19 = 0x0
+[EX ] Cycle 8 | op1 = 0x0 | op2 = 0xb
+[EX ] Cycle 8 | Branch(taken) => nextPC=0x1c
+[WB ] Cycle 9 | Wrote x5 = 0x2
+[IF ] Cycle 9 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 10 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 10 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 11 | op1 = 0x0 | op2 = 0x2
+[WB ] Cycle 13 | Wrote x10 = 0x0
+[ID ] Cycle 13 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 13 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 14 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 14 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 15 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 16 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 16 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 17 | op1 = 0x0 | op2 = 0x1
+[ID ] Cycle 17 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 17 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 18 | op1 = 0x0 | op2 = 0x1
+[ID ] Cycle 18 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 18 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 19 | Wrote x3 = 0x1
+[EX ] Cycle 19 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 19 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 20 | Wrote x18 = 0x1
+[IF ] Cycle 20 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 21 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 21 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 22 | op1 = 0x1 | op2 = 0xb
+[EX ] Cycle 22 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 23 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 24 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 24 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 25 | op1 = 0x1 | op2 = 0x2
+[WB ] Cycle 27 | Wrote x10 = 0x1
+[ID ] Cycle 27 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 27 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 28 | op1 = 0x1 | op2 = 0x0
+[EX ] Cycle 28 | Branch(not-taken) => nextPC=0x24
+[IF ] Cycle 28 | JUMP => PC next = 0x38 20
+[ID ] Cycle 28 | Decoding instruction 0x14000ef at PC=0x24
+[IF ] Cycle 28 | Fetched instruction 0xe63 at PC=0x28
+[EX ] Cycle 29 | op1 = 0x0 | op2 = 0xb
+[EX ] ΓÇª Jump => nextPC=0x38
+[IF ] Cycle 30 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 31 | Wrote x1 = 0x28
+[ID ] Cycle 31 | Decoding instruction 0x118193 at PC=0x38
+[IF ] Cycle 31 | Fetched instruction 0x198993 at PC=0x3c
+[EX ] Cycle 32 | op1 = 0x1 | op2 = 0x1
+[ID ] Cycle 32 | Decoding instruction 0x198993 at PC=0x3c
+[IF ] Cycle 32 | Fetched instruction 0xfc000ae3 at PC=0x40
+[EX ] Cycle 33 | op1 = 0x0 | op2 = 0x1
+[ID ] Cycle 33 | Decoding instruction 0xfc000ae3 at PC=0x40
+[WB ] Cycle 34 | Wrote x3 = 0x2
+[EX ] Cycle 34 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 34 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 35 | Wrote x19 = 0x1
+[IF ] Cycle 35 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 36 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 36 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 37 | op1 = 0x2 | op2 = 0xb
+[EX ] Cycle 37 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 38 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 39 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 39 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 40 | op1 = 0x2 | op2 = 0x2
+[WB ] Cycle 42 | Wrote x10 = 0x0
+[ID ] Cycle 42 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 42 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 43 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 43 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 44 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 45 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 45 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 46 | op1 = 0x2 | op2 = 0x1
+[ID ] Cycle 46 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 46 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 47 | op1 = 0x1 | op2 = 0x1
+[ID ] Cycle 47 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 47 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 48 | Wrote x3 = 0x3
+[EX ] Cycle 48 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 48 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 49 | Wrote x18 = 0x2
+[IF ] Cycle 49 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 50 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 50 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 51 | op1 = 0x3 | op2 = 0xb
+[EX ] Cycle 51 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 52 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 53 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 53 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 54 | op1 = 0x3 | op2 = 0x2
+[WB ] Cycle 56 | Wrote x10 = 0x1
+[ID ] Cycle 56 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 56 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 57 | op1 = 0x1 | op2 = 0x0
+[EX ] Cycle 57 | Branch(not-taken) => nextPC=0x24
+[IF ] Cycle 57 | JUMP => PC next = 0x38 20
+[ID ] Cycle 57 | Decoding instruction 0x14000ef at PC=0x24
+[IF ] Cycle 57 | Fetched instruction 0xe63 at PC=0x28
+[EX ] Cycle 58 | op1 = 0x0 | op2 = 0xb
+[EX ] ΓÇª Jump => nextPC=0x38
+[IF ] Cycle 59 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 60 | Wrote x1 = 0x28
+[ID ] Cycle 60 | Decoding instruction 0x118193 at PC=0x38
+[IF ] Cycle 60 | Fetched instruction 0x198993 at PC=0x3c
+[EX ] Cycle 61 | op1 = 0x3 | op2 = 0x1
+[ID ] Cycle 61 | Decoding instruction 0x198993 at PC=0x3c
+[IF ] Cycle 61 | Fetched instruction 0xfc000ae3 at PC=0x40
+[EX ] Cycle 62 | op1 = 0x1 | op2 = 0x1
+[ID ] Cycle 62 | Decoding instruction 0xfc000ae3 at PC=0x40
+[WB ] Cycle 63 | Wrote x3 = 0x4
+[EX ] Cycle 63 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 63 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 64 | Wrote x19 = 0x2
+[IF ] Cycle 64 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 65 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 65 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 66 | op1 = 0x4 | op2 = 0xb
+[EX ] Cycle 66 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 67 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 68 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 68 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 69 | op1 = 0x4 | op2 = 0x2
+[WB ] Cycle 71 | Wrote x10 = 0x0
+[ID ] Cycle 71 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 71 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 72 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 72 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 73 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 74 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 74 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 75 | op1 = 0x4 | op2 = 0x1
+[ID ] Cycle 75 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 75 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 76 | op1 = 0x2 | op2 = 0x1
+[ID ] Cycle 76 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 76 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 77 | Wrote x3 = 0x5
+[EX ] Cycle 77 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 77 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 78 | Wrote x18 = 0x3
+[IF ] Cycle 78 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 79 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 79 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 80 | op1 = 0x5 | op2 = 0xb
+[EX ] Cycle 80 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 81 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 82 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 82 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 83 | op1 = 0x5 | op2 = 0x2
+[WB ] Cycle 85 | Wrote x10 = 0x1
+[ID ] Cycle 85 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 85 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 86 | op1 = 0x1 | op2 = 0x0
+[EX ] Cycle 86 | Branch(not-taken) => nextPC=0x24
+[IF ] Cycle 86 | JUMP => PC next = 0x38 20
+[ID ] Cycle 86 | Decoding instruction 0x14000ef at PC=0x24
+[IF ] Cycle 86 | Fetched instruction 0xe63 at PC=0x28
+[EX ] Cycle 87 | op1 = 0x0 | op2 = 0xb
+[EX ] ΓÇª Jump => nextPC=0x38
+[IF ] Cycle 88 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 89 | Wrote x1 = 0x28
+[ID ] Cycle 89 | Decoding instruction 0x118193 at PC=0x38
+[IF ] Cycle 89 | Fetched instruction 0x198993 at PC=0x3c
+[EX ] Cycle 90 | op1 = 0x5 | op2 = 0x1
+[ID ] Cycle 90 | Decoding instruction 0x198993 at PC=0x3c
+[IF ] Cycle 90 | Fetched instruction 0xfc000ae3 at PC=0x40
+[EX ] Cycle 91 | op1 = 0x2 | op2 = 0x1
+[ID ] Cycle 91 | Decoding instruction 0xfc000ae3 at PC=0x40
+[WB ] Cycle 92 | Wrote x3 = 0x6
+[EX ] Cycle 92 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 92 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 93 | Wrote x19 = 0x3
+[IF ] Cycle 93 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 94 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 94 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 95 | op1 = 0x6 | op2 = 0xb
+[EX ] Cycle 95 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 96 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 97 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 97 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 98 | op1 = 0x6 | op2 = 0x2
+[WB ] Cycle 100 | Wrote x10 = 0x0
+[ID ] Cycle 100 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 100 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 101 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 101 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 102 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 103 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 103 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 104 | op1 = 0x6 | op2 = 0x1
+[ID ] Cycle 104 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 104 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 105 | op1 = 0x3 | op2 = 0x1
+[ID ] Cycle 105 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 105 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 106 | Wrote x3 = 0x7
+[EX ] Cycle 106 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 106 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 107 | Wrote x18 = 0x4
+[IF ] Cycle 107 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 108 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 108 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 109 | op1 = 0x7 | op2 = 0xb
+[EX ] Cycle 109 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 110 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 111 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 111 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 112 | op1 = 0x7 | op2 = 0x2
+[WB ] Cycle 114 | Wrote x10 = 0x1
+[ID ] Cycle 114 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 114 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 115 | op1 = 0x1 | op2 = 0x0
+[EX ] Cycle 115 | Branch(not-taken) => nextPC=0x24
+[IF ] Cycle 115 | JUMP => PC next = 0x38 20
+[ID ] Cycle 115 | Decoding instruction 0x14000ef at PC=0x24
+[IF ] Cycle 115 | Fetched instruction 0xe63 at PC=0x28
+[EX ] Cycle 116 | op1 = 0x0 | op2 = 0xb
+[EX ] ΓÇª Jump => nextPC=0x38
+[IF ] Cycle 117 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 118 | Wrote x1 = 0x28
+[ID ] Cycle 118 | Decoding instruction 0x118193 at PC=0x38
+[IF ] Cycle 118 | Fetched instruction 0x198993 at PC=0x3c
+[EX ] Cycle 119 | op1 = 0x7 | op2 = 0x1
+[ID ] Cycle 119 | Decoding instruction 0x198993 at PC=0x3c
+[IF ] Cycle 119 | Fetched instruction 0xfc000ae3 at PC=0x40
+[EX ] Cycle 120 | op1 = 0x3 | op2 = 0x1
+[ID ] Cycle 120 | Decoding instruction 0xfc000ae3 at PC=0x40
+[WB ] Cycle 121 | Wrote x3 = 0x8
+[EX ] Cycle 121 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 121 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 122 | Wrote x19 = 0x4
+[IF ] Cycle 122 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 123 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 123 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 124 | op1 = 0x8 | op2 = 0xb
+[EX ] Cycle 124 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 125 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 126 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 126 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 127 | op1 = 0x8 | op2 = 0x2
+[WB ] Cycle 129 | Wrote x10 = 0x0
+[ID ] Cycle 129 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 129 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 130 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 130 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 131 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 132 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 132 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 133 | op1 = 0x8 | op2 = 0x1
+[ID ] Cycle 133 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 133 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 134 | op1 = 0x4 | op2 = 0x1
+[ID ] Cycle 134 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 134 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 135 | Wrote x3 = 0x9
+[EX ] Cycle 135 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 135 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 136 | Wrote x18 = 0x5
+[IF ] Cycle 136 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 137 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 137 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 138 | op1 = 0x9 | op2 = 0xb
+[EX ] Cycle 138 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 139 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 140 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 140 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 141 | op1 = 0x9 | op2 = 0x2
+[WB ] Cycle 143 | Wrote x10 = 0x1
+[ID ] Cycle 143 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 143 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 144 | op1 = 0x1 | op2 = 0x0
+[EX ] Cycle 144 | Branch(not-taken) => nextPC=0x24
+[IF ] Cycle 144 | JUMP => PC next = 0x38 20
+[ID ] Cycle 144 | Decoding instruction 0x14000ef at PC=0x24
+[IF ] Cycle 144 | Fetched instruction 0xe63 at PC=0x28
+[EX ] Cycle 145 | op1 = 0x0 | op2 = 0xb
+[EX ] ΓÇª Jump => nextPC=0x38
+[IF ] Cycle 146 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 147 | Wrote x1 = 0x28
+[ID ] Cycle 147 | Decoding instruction 0x118193 at PC=0x38
+[IF ] Cycle 147 | Fetched instruction 0x198993 at PC=0x3c
+[EX ] Cycle 148 | op1 = 0x9 | op2 = 0x1
+[ID ] Cycle 148 | Decoding instruction 0x198993 at PC=0x3c
+[IF ] Cycle 148 | Fetched instruction 0xfc000ae3 at PC=0x40
+[EX ] Cycle 149 | op1 = 0x4 | op2 = 0x1
+[ID ] Cycle 149 | Decoding instruction 0xfc000ae3 at PC=0x40
+[WB ] Cycle 150 | Wrote x3 = 0xa
+[EX ] Cycle 150 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 150 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 151 | Wrote x19 = 0x5
+[IF ] Cycle 151 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 152 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 152 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 153 | op1 = 0xa | op2 = 0xb
+[EX ] Cycle 153 | Branch(taken) => nextPC=0x1c
+[IF ] Cycle 154 | Fetched instruction 0x251e533 at PC=0x1c
+[ID ] Cycle 155 | Decoding instruction 0x251e533 at PC=0x1c
+[IF ] Cycle 155 | Fetched instruction 0x50663 at PC=0x20
+[EX ] Cycle 156 | op1 = 0xa | op2 = 0x2
+[WB ] Cycle 158 | Wrote x10 = 0x0
+[ID ] Cycle 158 | Decoding instruction 0x50663 at PC=0x20
+[IF ] Cycle 158 | Fetched instruction 0x14000ef at PC=0x24
+[EX ] Cycle 159 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 159 | Branch(taken) => nextPC=0x2c
+[IF ] Cycle 160 | Fetched instruction 0x118193 at PC=0x2c
+[ID ] Cycle 161 | Decoding instruction 0x118193 at PC=0x2c
+[IF ] Cycle 161 | Fetched instruction 0x190913 at PC=0x30
+[EX ] Cycle 162 | op1 = 0xa | op2 = 0x1
+[ID ] Cycle 162 | Decoding instruction 0x190913 at PC=0x30
+[IF ] Cycle 162 | Fetched instruction 0xfe0000e3 at PC=0x34
+[EX ] Cycle 163 | op1 = 0x5 | op2 = 0x1
+[ID ] Cycle 163 | Decoding instruction 0xfe0000e3 at PC=0x34
+[IF ] Cycle 163 | Fetched instruction 0x118193 at PC=0x38
+[WB ] Cycle 164 | Wrote x3 = 0xb
+[EX ] Cycle 164 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 164 | Branch(taken) => nextPC=0x14
+[WB ] Cycle 165 | Wrote x18 = 0x6
+[IF ] Cycle 165 | Fetched instruction 0x141c463 at PC=0x14
+[ID ] Cycle 166 | Decoding instruction 0x141c463 at PC=0x14
+[IF ] Cycle 166 | Fetched instruction 0x2000663 at PC=0x18
+[EX ] Cycle 167 | op1 = 0xb | op2 = 0xb
+[EX ] Cycle 167 | Branch(not-taken) => nextPC=0x18
+[ID ] Cycle 167 | Decoding instruction 0x2000663 at PC=0x18
+[IF ] Cycle 167 | Fetched instruction 0x251e533 at PC=0x1c
+[EX ] Cycle 168 | op1 = 0x0 | op2 = 0x0
+[EX ] Cycle 168 | Branch(taken) => nextPC=0x44

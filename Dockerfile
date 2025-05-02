@@ -13,7 +13,6 @@ RUN npm install
 
 # Copy all project files, including executables
 COPY . .
-RUN sh run.sh
 # Ensure executables have permission to run
 RUN chmod +x /app/src/executables/1.out /app/src/executables/myRISCVSim.out
 

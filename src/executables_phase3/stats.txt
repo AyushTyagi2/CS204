@@ -1,0 +1,12 @@
+Stat1_Total_Cycles                6
+Stat2_Total_Instructions_Executed 2
+Stat3_CPI                         3.00
+Stat4_Load_Store_Instructions     0
+Stat5_ALU_Instructions            2
+Stat6_Control_Instructions        0
+Stat7_Total_Stalls                0
+Stat8_Data_Hazards                0
+Stat9_Control_Hazards             0
+Stat10_Branch_Mispredictions      0
+Stat11_Stalls_Data_Hazards        0
+Stat12_Stalls_Control_Hazards     0

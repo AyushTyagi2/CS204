@@ -3,7 +3,7 @@ import path from "path";
 
 export async function GET() {
     try {
-        const filePath = path.join(process.cwd(), "src/executables/output.mc");
+        const filePath = path.join(process.cwd(), "src/executables_phase1/output.mc");
         const fileContent = await fs.readFile(filePath, "utf-8");
 
         return new Response(JSON.stringify({ success: true, data: fileContent }), {

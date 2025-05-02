@@ -1,0 +1,35 @@
+Core Vision Checklist for "Pippy the Pipeline"
+Target Audience: Even a 4-year-old should be able to understand basic pipelining through fun visuals.
+
+Visualization Style: Cartoonish characters representing pipeline stages (IF, ID, EX, MEM, WB).
+
+Instruction Flow: Represented as scrolls or train cars moving through pipeline stages.
+
+Pipeline Stages as Characters:
+
+IF → Fetchy the Scout
+
+ID → Decody the Owl
+
+EX → Magico the Wizard
+
+MEM → Libby the Librarian
+
+WB → Scribby the Scribe
+
+Game-like Setup:
+
+Each instruction is a quest or scroll.
+
+Visual hazards for stalling, forwarding, branch misprediction.
+
+Teaching Mode: Levels increase complexity (start with single instruction → multiple → hazards).
+
+Controls: Drag-and-drop, play/pause/step-through, tap for explanations.
+
+Narration/Feedback: Voice/text explanations with encouragement.
+
+Extra Mode: Quiz/Challenge where the child decides where the scroll should go next.
+
+Tech Stack (Tentative): React + animation libs (Framer Motion or PixiJS), no backend initially.
+

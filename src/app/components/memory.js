@@ -7,31 +7,35 @@ const Memory = ({ data, className = "" }) => {
 
   useEffect(() => {
     if (data?.memory) {
-      // Update memory values from data
+      const memoryData = data.memory;
+      const BASE_ADDRESS = 0x10000000;
+  
       const updatedMemory = Array(MEMORY_SIZE)
         .fill(0)
         .map((_, index) => {
-          const addr = index * 4; // Word-aligned memory addresses
-          return data.memory[addr] !== undefined
-            ? `0x${data.memory[addr].toString(16).padStart(8, "0")}`
-            : "0x00000000";
+          const addr = BASE_ADDRESS + index * 4;
+          const hexKey = `0x${addr.toString(16).padStart(8, "0")}`;
+  
+          const value = memoryData[hexKey] !== undefined ? memoryData[hexKey] : 0;
+          return `0x${value.toString(16).padStart(8, "0")}`;
         });
-
+  
       setMemory(updatedMemory);
     }
-  }, [data]); // Update when new memory data arrives
+  }, [data]);
+  
 
   return (
-    <div className={`w-full h-full bg-gray-700 p-4 ${className}`}>
+    <div className={`w-full h-full bg-[#191919] p-4 ${className}`}>
       <h2 className="text-lg font-bold mb-2">Memory</h2>
 
       {/* Scrollable Memory List */}
       <div className="h-full overflow-y-auto memory-section scrollbar-hide border border-gray-600 rounded-lg p-2">
         <div className="grid grid-cols-1 gap-2 text-sm">
           {memory.map((value, index) => (
-            <div key={index} className="flex justify-between p-1 bg-gray-800 rounded">
+            <div key={index} className="flex justify-between p-1 bg-[#2b2b2b] rounded">
               <span className="text-gray-400">0x{(index * 4).toString(16).padStart(8, "0")}</span>
-              <span className="font-mono text-green-400">{value}</span>
+              <span className="font-mono text-[#df7e08]">{value}</span>
             </div>
           ))}
         </div>
