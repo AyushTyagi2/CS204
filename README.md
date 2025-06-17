@@ -1,5 +1,4 @@
 
----
 
 # 🚀 RISC-V Simulator (Unicycle + Pipeline) with Next.js Frontend
 
