@@ -93,10 +93,4 @@ Make sure your C++ backend is hosted separately (e.g., on a VM or container serv
 
 Contributions, bug reports, and feature requests are welcome! Feel free to fork this repo and submit pull requests.
 
----
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
